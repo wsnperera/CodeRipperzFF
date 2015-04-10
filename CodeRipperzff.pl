@@ -18,7 +18,35 @@ boole_or(1,1,1).
 //sanduni
 
 
+//chethaka 
 
+actual_vals(B,_,_,B) :­ member(B,[0,1]).
+
+actual_vals(X,Vars,A,Val) :­ atom(X),
+
+actual_vals(X and Y,Vars,A,Val) :­ actual_vals(X,Vars,A,VX),
+
+lookup(X,Vars,A,Val).
+
+actual_vals(Y,Vars,A,VY),
+
+boole_and(VX,VY,Val).
+
+actual_vals(X or Y,Vars,A,Val) :­ actual_vals(X,Vars,A,VX),
+
+actual_vals(not X,Vars,A,Val) :­ actual_vals(X,Vars,A,VX),
+
+actual_vals(Y,Vars,A,VY),
+
+boole_or(VX,VY,Val).
+
+boole_not(VX,Val).
+
+lookup(X,[X|_],[V|_],V).
+
+lookup(X,[_|Vars],[_|A],V) :­ lookup(X,Vars,A,V).
+
+//chethaka 
 
 
 //Suhani
