@@ -17,6 +17,24 @@ boole_and(1,1,1).
 boole_or(1,1,1).
 //sanduni
 
+//hashan
+search_vals(B,V,V) :­ member(B,[0,1]),!.
+
+search_vals(X,INPUT,OUTPUT) :­ atom(X),
+
+search_vals(X and Y,INPUT,OUTPUT) :­ search_vals(X,INPUT,TEMPVAL),
+
+search_vals(X or Y,INPUT,OUTPUT) :­ search_vals(X,INPUT,TEMPVAL),
+
+search_vals(not X,INPUT,OUTPUT) :­ search_vals(X,INPUT,OUTPUT).
+
+(member(X,INPUT) ­> OUTPUT = INPUT ; OUTPUT = [X|INPUT]).
+
+search_vals(Y,TEMPVAL,OUTPUT).
+
+search_vals(Y,TEMPVAL,OUTPUT).
+//hashan
+
 //Jithma 
 highlight3 initial_assign([],[]).
 initial_assign([X|R],[0|S]) :- initial_assign(R,S).
