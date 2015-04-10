@@ -17,6 +17,17 @@ boole_and(1,1,1).
 boole_or(1,1,1).
 //sanduni
 
+//Jithma 
+highlight3 initial_assign([],[]).
+initial_assign([X|R],[0|S]) :- initial_assign(R,S).
+successor(A,S) :- reverse(A,R),
+                  next(R,B),
+                  reverse(B,S).
+next([0|R],[1|R]).
+next([1|R],[0|S]) :- next(R,S).
+highlight0
+//Jithma
+
 
 //Chethaka 
 
