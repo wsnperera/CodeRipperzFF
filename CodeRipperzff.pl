@@ -18,7 +18,7 @@ boole_or(1,1,1).
 //sanduni
 
 
-//chethaka 
+//Chethaka 
 
 actual_vals(B,_,_,B) :­ member(B,[0,1]).
 
@@ -46,7 +46,7 @@ lookup(X,[X|_],[V|_],V).
 
 lookup(X,[_|Vars],[_|A],V) :­ lookup(X,Vars,A,V).
 
-//chethaka 
+//Chethaka 
 
 
 //Suhani
